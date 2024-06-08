@@ -1,0 +1,129 @@
+<div class="container">
+    <div class="row my-5">
+        <div class="col col-sm-12 col-md-4 text-center">
+            <img [src]="image" width="200" height="200" class="rounded-circle" /><br>
+            <button type="button" class="btn btn-primary mt-2 ">Edit Profile</button>
+        </div>
+        <div class="col col-sm-12 col-md-8">
+            <table class="table table-hover">
+                <tbody>
+                    <tr>
+                        <th scope="row">Name: </th>
+                        <td>{{name}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Email: </th>
+                        <td>{{mail}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Address: </th>
+                        <td>{{address.street}} . {{address.city}} . {{address.country}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" rowspan="4" style="vertical-align: middle;">phone: </th>
+                    </tr>
+                    @for (num of phone; track phone) {
+                        <tr>
+                            <td>{{num.number}}</td>
+                        </tr>
+                    }  
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <hr>
+    <div class="row g-2 my-3">
+        <div class="d-flex justify-content-between my-2">
+            <h3 class="fw-bolder "><i class="fa-solid fa-heart text-danger"></i> Favorites</h3>
+            <button class="btn btn-outline-light text-warning border border-0">Show More <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+        <div class="row d-flex align-items-center">
+            <div class="col col-sm-1 "><button class="btn fs-2 fw-bolder btn-outline-light text-primary rounded-circle "
+                    (click)="handleLeftBtn()"><i class="fa-solid fa-caret-left"></i></button>
+            </div>
+            <div class="col col-sm-10">
+                <div class="row">
+                    @for (favorites of favChunks[count]; track favChunks[0]){
+                        @if (favorites.isFav) {
+                            <div class="col col-sm-12 col-md-6 col-lg-4">
+                                <div class="card">
+                                    <div style="position: relative;">
+                                        <h3 style="position: absolute; top: 1rem; left: 1rem;" class="badge fs-5 fw-bolder text-bg-light text-danger">
+                                            @if (favorites.isFav) {
+                                                <i class="fa-solid fa-heart"></i>
+                                            }@else {
+                                                <i class="fa-regular fa-heart"></i>
+                                            }
+                                        </h3>
+                                        <img [src]="favorites.productImg" class="card-img-top m-auto w-100" height="300"
+                                        [alt]="favorites.product">
+                                    </div>
+        
+                                    <div class="card-body">
+                                        <h4 class="card-title fw-bolder text-center">{{favorites.product}}</h4>
+                                        <a href="#" class="btn btn-link text-center">Show Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+                    }
+                </div>
+            </div>
+            <div class="col col-sm-1 "> <button
+                    class="btn fs-2 fw-bolder btn-outline-light  text-primary rounded-circle "
+                    (click)="handleRightBtn()"><i class="fa-solid fa-caret-right"></i></button>
+            </div>
+
+
+        </div>
+    </div>
+    <hr>
+    <div class="row g-2 my-3">
+        <div class="d-flex justify-content-between  my-2">
+            <h3 class="fw-bolder "> <i class="fa-solid fa-comment text-primary"></i> Recommends For You</h3>
+            <button class="btn btn-outline-light text-warning border border-0">Show More <i class="fa-solid fa-arrow-right"></i></button>    
+        </div>
+ 
+        <div class="row d-flex align-items-center">
+            <div class="col col-sm-1 "><button class="btn fs-2 fw-bolder btn-outline-light text-primary rounded-circle "
+                    (click)="handleLeftProductBtn()"><i class="fa-solid fa-caret-left"></i></button>
+            </div>
+            <div class="col col-sm-10">
+                <div class="row">
+                    @for (favorites of productChunks[productchuncksCount]; track productChunks[productchuncksCount]){
+                    <div class="col col-sm-12 col-md-6 col-lg-4">
+                        <div class="card">
+                            <div style="position: relative;">
+                                <span style="position: absolute; top: 1rem; left: 1rem;" class="badge fs-5 text-bg-light text-danger">
+                                    @if (favorites.isFav) {
+                                        <i class="fa-solid fa-heart"></i>
+                                    }@else {
+                                        <i class="fa-regular fa-heart"></i>
+                                    }
+                                </span>
+                                <span style="position: absolute; top: 1rem; right: 1rem;" class="badge fw-bolder text-bg-light">
+                                    <i class="fa-solid fa-star fs-5 text-warning"></i>5.5
+                                </span>
+                                <img [src]="favorites.productImg" class="card-img-top m-auto w-100" height="300"
+                                [alt]="favorites.product">
+                            </div>
+
+                            <div class="card-body">
+                                <h4 class="card-title fw-bolder text-center">{{favorites.product}}</h4>
+                                <a href="#" class="btn btn-link text-center">Show Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    }
+                </div>
+            </div>
+            <div class="col col-sm-1 "> <button
+                    class="btn fs-2 fw-bolder btn-outline-light  text-primary rounded-circle "
+                    (click)="handleRightProductBtn()"><i class="fa-solid fa-caret-right"></i></button>
+            </div>
+
+
+        </div>
+    </div>
+</div>

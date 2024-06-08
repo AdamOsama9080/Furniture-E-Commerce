@@ -1,0 +1,13 @@
+.container {
+    margin-top: 20px;
+  }
+  
+  ngx-charts-bar-vertical, ngx-charts-pie-chart {
+    display: block;
+    width: 100%;
+  }
+  
+  .row {
+    margin-top: 20px;
+  }
+  

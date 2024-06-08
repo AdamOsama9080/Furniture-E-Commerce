@@ -1,0 +1,20 @@
+<div class="card mt-3">
+    <div class="card-image-links position-relative">
+        <div class="position-relative">
+            <img src="{{product.img_url}}" class="w-100 position-relative" alt="">
+            <p class="position-absolute m-0">
+                <a [routerLink]="['/product', product.id]" class="link-light bg-dark p-2 text-decoration-none">details</a>
+                <a href="#" class="link-light bg-secondary p-2 text-decoration-none" (click)="addToFavorites($event, product)">
+                    <i class="fa-solid fa-heart text-light"></i>
+                </a>
+            </p>
+        </div>
+    </div>
+    <div class="text-center p-3">
+        <h3 class="fs-6">{{product.title}}</h3>
+        <span class="text-muted">
+            <span class="price text-muted"><del>{{product.old_price}}</del> {{product.price}}$</span>
+            <a href="" class="add-cart text-muted text-decoration-none" (click)="addToCart($event, product)">Add to cart</a>
+        </span>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+<nav class="navbar navbar-expand-lg navbar-light shadow-bottom">
+    <div class="container ">
+      <h1>DEPOT</h1>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav" >
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/home" routerLinkActive="text-info">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/about" routerLinkActive="text-info">About</a>
+                </li>
+            </ul>
+       
+          <ul class="navbar-nav" >
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/dashboard" routerLinkActive="text-info">Dashboard</a>
+            </li>
+           
+        </ul>
+        
+    
+
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+                <a class="nav-link text-muted" routerLink="/cart" routerLinkActive="text-info">
+                    <i class="fa-brands fa-opencart"></i> ({{ total | currency:'USD':'symbol':'1.2-2' }})
+                </a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link  text-muted" routerLink="/wishlist" routerLinkActive="text-info">
+                    <i class="fa-regular fa-heart"></i> {{wishlistLength}}
+                </a>
+              </li>
+          @if(true){
+            <li class="nav-item">
+                <a class="nav-link " routerLink="/login" routerLinkActive="text-info">Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " routerLink="/register" routerLinkActive="text-info">Register</a>
+              </li> 
+          }@else{
+            <li class="nav-item">
+                <a class="nav-link ">Logout</a>
+              </li>
+          }
+          <li class="nav-item  ">
+            <a class="nav-link text-muted"><i class="fa-solid fa-magnifying-glass"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>

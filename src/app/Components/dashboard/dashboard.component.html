@@ -1,0 +1,69 @@
+<!-- <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-6">
+        <ngx-charts-bar-vertical
+          [view]="view"
+          [scheme]="colorScheme"
+          [results]="single"
+          [gradient]="gradient"
+          [xAxis]="showXAxis"
+          [yAxis]="showYAxis"
+          [legend]="showLegend"
+          [showXAxisLabel]="showXAxisLabel"
+          [showYAxisLabel]="showYAxisLabel"
+          [xAxisLabel]="xAxisLabel"
+          [yAxisLabel]="yAxisLabel"
+          (select)="onSelect($event)">
+        </ngx-charts-bar-vertical>
+      </div>
+      <div class="col-md-6">
+        <ngx-charts-pie-chart
+          [view]="view"
+          [scheme]="colorScheme"
+          [results]="single"
+          [legend]="showLegend"
+          [labels]="showLabels"
+          [doughnut]="false"
+          (select)="onSelect($event)">
+        </ngx-charts-pie-chart>
+      </div>
+    </div>
+  </div>
+   -->
+
+   <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-4 " *ngFor="let product of products">
+        <div class="card h-75  text-white mb-3" [ngClass]="getCardClass(product.category)">
+          <div class="card-header">{{ product.sup_title }}</div>
+          <div class="card-body">
+            <h5 class="card-title">{{ product.title }}</h5>
+            <p class="card-text">{{ getFirst10Words(product.description) }}</p>
+            <p class="card-text"><strong>Price:</strong> ${{ product.price }}</p>
+            <p class="card-text" *ngIf="product.old_price"><strong>Old Price:</strong> ${{ product.old_price }}</p>
+            <p class="card-text"><strong>Rating:</strong> {{ product.rate }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="col-md-12">
+        <ngx-charts-bar-vertical
+          [view]="view"
+          [scheme]="colorScheme"
+          [results]="single"
+          [gradient]="gradient"
+          [xAxis]="showXAxis"
+          [yAxis]="showYAxis"
+          [legend]="showLegend"
+          [showXAxisLabel]="showXAxisLabel"
+          [showYAxisLabel]="showYAxisLabel"
+          [xAxisLabel]="xAxisLabel"
+          [yAxisLabel]="yAxisLabel"
+          (select)="onSelect($event)">
+        </ngx-charts-bar-vertical>
+      </div>
+    </div>
+  </div>
+  

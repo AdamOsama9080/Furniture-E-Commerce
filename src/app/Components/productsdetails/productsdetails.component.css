@@ -1,0 +1,46 @@
+.star-rating {
+  display: flex;
+  align-items: center;
+}
+
+.star-rating .star {
+  color: gold;
+  margin-right: 5px;
+}
+
+
+.wishlist-container {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.wishlist-container .heart-icon {
+  color: black;
+  font-size: 20px;
+}
+
+.wishlist-container .wish-text {
+  display: inline-block;
+  margin-left: 5px;
+  font-size: 16px;
+}
+.img{
+  width: 250px;
+  height: 250px;
+  margin-left: 40px;
+  
+}
+.stars-rating {
+  font-size: 24px; 
+}
+
+.stars {
+  cursor: pointer;
+}
+
+.gold {
+  color: gold;
+}
+img{
+  max-height: 300px;
+}

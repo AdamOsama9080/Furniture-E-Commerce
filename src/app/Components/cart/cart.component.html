@@ -1,0 +1,205 @@
+<div class="container">
+  <main>
+    <div class="cart-image">
+      <h2>CART</h2>
+    </div>
+    <div
+      style="
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 82px !important;
+      "
+    >
+      <div style="width: 68%">
+        <h2
+        *ngIf="!(cartItems.length === 0)"
+          style="font-size: 24px; letter-spacing: 2px; margin: 20px 10px 30px"
+        >
+          SHOPPING CART
+        </h2>
+        <h2 style="margin-top: 170px; text-align: center;" *ngIf="cartItems.length === 0">YOUR CART IS CURRENTLY EMPTY.</h2>
+        <div class="cart-items" *ngFor="let item of cartItems; let i = index">
+          <div class="cart-item">
+            <button
+              (click)="removeItem(i)"
+              style="
+                border: none;
+                background-color: transparent;
+                color: #929292;
+                padding: 0;
+              "
+            >
+              <img style="width: 20px !important" src="assets/close.svg" />
+            </button>
+            <img
+              width="100px"
+              height="120px"
+              src="{{ item.img_url }}"
+              alt="{{ item.title }}"
+            />
+            <div class="item-details">
+              <h5>{{ item.title }}</h5>
+              <p>$ {{ item.price.toFixed(2) }}</p>
+              <div class="quantity">
+                <label for="quantity{{ i }}">Quantity</label>
+                <div class="input-group">
+                  <button (click)="decreaseQuantity(item)">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="#929292"
+                      class="bi bi-caret-left-fill"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"
+                      />
+                    </svg>
+                  </button>
+                  <input
+                    id="quantity{{ i }}"
+                    type="number"
+                    min="1"
+                    value="1"
+                    [(ngModel)]="item.quantity"
+                  />
+                  <button (click)="increaseQuantity(item)">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="#929292"
+                      class="bi bi-caret-right-fill"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="total">${{ (item.price * item.quantity).toFixed(2) }}</div>
+          </div>
+        </div>
+        <div
+        *ngIf="!(cartItems.length === 0)"
+          class="d-flex justify-content-between w-50"
+          style="
+            background-color: #f3f3f3;
+            align-items: center;
+            padding: 20px 40px;
+          "
+        >
+          <input
+            placeholder="Coupon code"
+            style="
+              margin: 0;
+              font-size: 13px;
+              color: #929292;
+              border: none;
+              background-color: transparent;
+              outline: none;
+            "
+          />
+          <button
+            style="
+              margin: 0;
+              font-weight: 600;
+              font-size: 12px;
+              letter-spacing: 2px;
+              font-family: Catamaran, sans-serif;
+              border: none;
+              background-color: transparent;
+            "
+          >
+            APPLY COUPON
+          </button>
+        </div>
+      </div>
+
+      <div class="summary" *ngIf="!(cartItems.length === 0)">
+        <h3>CART TOTALS</h3>
+        <table class="cart-table" style="width: 100%">
+          <tr>
+            <td class="cart-label"><strong>SUBTOTAL</strong></td>
+            <td class="cart-value" style="font-size: 14px; color: #929292">
+              <p>${{ subtotal.toFixed(2) }}</p>
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="cart-label"
+              style="vertical-align: top; border-bottom: 1px solid #e1e1e1"
+            >
+              <strong>SHIPPING</strong>
+            </td>
+            <td class="cart-value" style="border-bottom: 1px solid #e1e1e1">
+              <table class="shipping-table">
+                <tr>
+                  <td>
+                    <input type="radio" name="shipping" value="free" (change)="updateShippingCost($event)"/>
+                  </td>
+                  <td>
+                    <label>Free shipping</label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input type="radio" name="shipping" value="local" (change)="updateShippingCost($event)"/>
+                  </td>
+                  <td>
+                    <label>Local pickup</label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input type="radio" name="shipping" value="flat-rate" (change)="updateShippingCost($event)"/>
+                  </td>
+                  <td>
+                    <label>Flat Rate: $10</label>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <p style="margin: 10px 0;">Shipping to <span style="font-weight: bold;">Egypt</span></p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td class="cart-label" style="padding: 20px 30px 20px 0">
+              <strong>TOTAL</strong>
+            </td>
+            <td
+              class="cart-value"
+              style="text-align: end; font-size: 24px; font-weight: bold"
+            >
+              <p>${{ total.toFixed(2) }}</p>
+            </td>
+          </tr>
+        </table>
+        <button class="checkout-btn" onclick="alert(`Thanks for shopping with us!`)">PROCEED TO CHECKOUT</button>
+      </div>
+    </div>
+  </main>
+
+  <footer style="margin-top: 35px">
+    <a
+      href=""
+      style="
+        color: #929292;
+        text-decoration: none;
+        font-size: 14px;
+        display: flex;
+        gap: 10px;
+      "
+      ><img style="margin-top: 1px; margin-bottom: 100px;" src="../../../assets/arrow.svg" />Go Back
+      Shopping</a
+    >
+  </footer>
+</div>

@@ -1,0 +1,233 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  color: #fff;
+}
+main {
+  padding-top: 300px;
+}
+nav {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+header a {
+  color: black !important;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+ul {
+  gap: 10px;
+}
+nav ul {
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.logo {
+  letter-spacing: 5px;
+  color: black;
+  font-weight: bold;
+}
+
+.icons {
+  display: flex;
+  gap: 20px;
+}
+
+.cart-image {
+  background-image: url("https://wallpapercave.com/wp/wp9103853.jpg");
+  background-size: cover;
+  background-position-y: -250px;
+  height: 325px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  top: 70px;
+  left: 0;
+  z-index: -1;
+}
+
+.cart-image h2 {
+  font-size: 3.125em;
+  color: #fff;
+}
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.cart-item {
+  display: flex !important;
+  align-items: center !important;
+  padding: 22px 10px !important;
+  border-bottom: 1px solid #e1e1e1 !important;
+  width: 100% !important;
+  gap: 20px;
+}
+
+.cart-item div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.quantity {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  margin-left: auto;
+  gap: 10px;
+}
+
+.checkout-btn {
+  background-color: #000;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  letter-spacing: .15em;
+  font-weight: 700;
+  font-size: 12px;
+  padding: 15px 46px;
+}
+
+.item-div {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between;
+  width: 100%;
+}
+
+h5 {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-bottom: 0;
+}
+
+.summary {
+  background-color: #fafafa;
+  padding: 40px 35px;
+  width: 30%;
+  height: fit-content;
+}
+
+.shipping-options {
+  display: flex;
+  flex-direction: column;
+  color: #929292;
+  font-size: 14px;
+  font-weight: 300;
+  margin-left: 5px;
+}
+
+.shipping-options li {
+  margin-bottom: 10px;
+}
+
+.summary-button {
+  border: none;
+  cursor: pointer;
+}
+
+h3 {
+  letter-spacing: 3.7px;
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: row !important;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+}
+
+.input-group input[type="number"] {
+  text-align: center;
+  border: none;
+  width: 2rem;
+}
+
+.item-details {
+  flex-grow: 1 !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+}
+
+.item-details p {
+  margin: 0;
+  margin-left: auto;
+  font-size: 14px;
+  color: #929292;
+}
+
+.quantity label {
+  margin-right: 10px !important;
+  font-size: 13px;
+  color: #929292;
+}
+
+.quantity button {
+  transition: background-color 0.3s !important;
+  background-color: transparent !important;
+  border: none;
+  padding: 0;
+}
+
+.quantity button:hover img {
+  background-color: #e0e0e0 !important;
+}
+
+.total {
+  font-weight: bold;
+  font-size: 14px;
+  color: #929292;
+}
+
+table p {
+  margin: 0;
+}
+
+table strong {
+  padding-right: 30px;
+  font-size: 14px;
+  color: #080808;
+  letter-spacing: 2px;
+}
+
+.cart-table > tr >  td {
+  padding: 8px 0;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.shipping-table label,
+.shipping-table p {
+  font-size: 14px;
+  color: #929292;
+  font-weight: 300;
+}

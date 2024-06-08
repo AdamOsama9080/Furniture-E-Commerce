@@ -1,0 +1,80 @@
+<div style="font-size: 50px; color: white;" class="background-container">
+    WISHLIST
+  </div>
+ 
+  <div class="overlay" *ngIf="productss && productss.length === 0">
+    <p>no products added yet</p>
+  </div>
+  
+  
+
+  <div class="container mt-3">
+    <div class="row justify-content-between ">
+      @for (prd of productss; track $index) {
+
+          <div class="col-md-6 d-flex justify-content-center align-items-center position-relative mt-3 linediv ">
+            <div class="col-md-2 mx-2">
+              <img class="w-75 img-fluid" src="{{prd.img_url}}" alt="">
+            </div>
+            <div class="col-md-2 mx-4">
+              <p>{{prd.title}}</p>
+            </div>
+            <div class="col-md-2 mx-2">
+              <button (click)="getProductDetails(prd.id)" class="btn btn-danger">Quick view</button>
+            </div>
+    
+            <i (click)="deleteProduct(prd.id, $index)" class="far fs-3 fa-times-circle close-arrow2"></i>
+    
+          </div>
+          <div class="col-md-6 d-flex justify-content-center align-items-center">
+            <div class="col-md-2">
+              <p>{{prd.price}}$</p>
+            </div>
+            <div class="col-md-2">
+              <p>{{prd.sup_title}}</p>
+            </div>
+            <div class="col-md-2">
+            </div>
+          </div>
+    }
+      
+    </div>
+  </div>
+
+
+  <div *ngIf="isShown" class="shadow d-flex justify-content-center align-items-center ">
+
+  <div class="d-flex w-50  justify-content-around align-items-center" >
+<div class="container">
+    <div class="row ">
+            <div *ngIf="isShown" class=" col-md-6  bg-white ">
+                <div style="height: 500px;"  class="">
+                  <img style="height: 100%; width: 100%;"   src={{selectedProduct.img_url}} alt="this is img  of  product">
+                </div>
+              </div>
+          
+              <div *ngIf="isShown" class="col-md-6 bg-white ">
+                <br style="height: 500px;" >
+                  <h3 class="mt-3 ">{{selectedProduct.title}}</h3>
+                  <p class="mb-5">{{selectedProduct.price}}$</p>
+                  <span ><img class=" star mx-1" src="assets/images/star.png" alt="" srcset=""></span>
+                  <span ><img class=" star mx-1" src="assets/images/star.png" alt="" srcset=""></span>
+                  <span ><img class=" star mx-1" src="assets/images/star.png" alt="" srcset=""></span>
+                  <span ><img class=" star mx-1" src="assets/images/star.png" alt="" srcset=""></span>
+
+                  <p class="mt-2">{{selectedProduct.description}}
+                </p>
+                               
+                </div>
+              </div>
+        </div>
+       
+
+    </div>
+    <i (click)="hide()" class="far fs-3 fa-times-circle  close-arrow" ></i>
+
+    
+</div>
+
+    
+  

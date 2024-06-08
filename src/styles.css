@@ -1,0 +1,6 @@
+/* You can add global styles to this file, and also import other style files */
+/* @import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default'; */
+@import '../node_modules/wowjs/css/libs/animate.css';
+/* You can add global styles to this file, and also import other style files */
+@import "@ng-select/ng-select/themes/default.theme.css";

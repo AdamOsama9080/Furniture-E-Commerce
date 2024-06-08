@@ -1,0 +1,63 @@
+.background-container {
+    background-image: url('../../../assets/images/faq-title-img.jpg');
+    background-size: contain;
+    height: 350px;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center 0px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .overlay {
+    height: 500px; 
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .shadow {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+  
+  .shadow-img {
+    width: 50%;
+    height: 500px;
+    background-image: url(../../../assets/images/h1-product-5-600x728.jpg);
+    background-size: cover;
+  }
+  
+  .shadow-img i {
+    margin: 8px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .star {
+    width: 20px;
+  }
+  
+  .close-arrow {
+    position: absolute;
+    top: 16%;
+    right: 26%;
+    cursor: pointer;
+    z-index: 1; /* Ensure the icon is above the linediv */
+  }
+  
+  .close-arrow2 {
+    position: absolute;
+    top: 30%;
+    left: 11%;
+    cursor: pointer;
+    z-index: 1; /* Ensure the icon is above the linediv */
+  }
+  

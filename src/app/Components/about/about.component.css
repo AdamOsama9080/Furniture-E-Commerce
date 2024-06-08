@@ -1,0 +1,20 @@
+.background-container {
+    background-image: url('../../../assets/images/about-title-img1.jpg');
+    background-size: auto;
+    height: 350px;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center 0px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .overlay {
+    height: 500px; 
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

@@ -1,0 +1,211 @@
+<div class="container">
+
+ 
+
+
+  <div class="container bg-lightgray py-4">
+    <div class="row">
+        <div class="col-lg-6 col-md-12 ">
+            <img src={{products.img_url}} alt="Image" class="img-fluid">
+            <!-- <img src="https://depot.qodeinteractive.com/wp-content/uploads/2017/01/h1-product-8-550x550.jpg" alt="Image" class="img-fluid"> -->
+        </div>
+        <div class="col-lg-4 col-md-12" >
+            <h3>{{ products.title }}</h3>
+            <p>{{ products.price }}</p>
+            <div class="d-flex align-items-center">
+                <div class="star-rating me-3">
+                    <span class="star"><i class="fas fa-star"></i></span>
+                    <span class="star"><i class="fas fa-star"></i></span>
+                    <span class="star"><i class="fas fa-star"></i></span>
+                    <span class="star"><i class="fas fa-star"></i></span>
+                    <span class="star"><i class="fas fa-star"></i></span>
+                </div>
+                <div class="review">
+                    <p>(customer review)</p>
+                </div>
+            </div>
+           
+             <p style="color: rgb(152, 150, 150);">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ut ullamcorper leo, eget euismod orci. Cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus. Vestibulum ultricies aliquam convallis.</p> 
+          
+            <div class="input-group mb-3">
+                <button class="btn btn-dark" type="button" (click)="decreaseQuantity()">-</button>
+                <input type="text" class="form-control form-control-sm text-center" [(ngModel)]="quantity" readonly>
+                <button class="btn btn-dark" type="button" (click)="increaseQuantity()">+</button>
+                <button class="btn btn-dark" type="button" (click)="addToCart($event,products)">Add To Cart</button>
+            </div>
+            00
+            <div class="wishlist-container">
+                <i class="fa-solid fa-heart heart-icon"></i>
+                <p class="wish-text">Browse wishlist</p>
+            </div>
+            <p style="color: rgb(152, 150, 150);">Categories: {{ products.category }}<br> Tags: {{ products.tags.join(', ') }}</p>
+            <!-- <p style="color: rgb(152, 150, 150);">Categories: Decoration, Home Decor<br> Tags: Black, Modern</p> -->
+        </div>
+    </div>
+  </div>
+  
+   <!-- secound section -->
+   <div class="button-group  bg-lightgray p-3 mb-3">
+    <button class="btn btn-light me-2" (click)="showDescription()">Description</button>
+    <button class="btn btn-light me-2" (click)="showAdditionalInfo()">Additional Information</button>
+    <button class="btn btn-light" (click)="showReview()">Review</button>
+  </div>
+  
+  <div class="container-fluid bg-lightgray">
+    <div *ngIf="selectedTab === 'description'" class="row">
+        <div class="col-md-12">
+            <h1 class="ms-3">Description</h1>
+            <p class="ms-3" style="color: rgb(152, 150, 150);">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ut ullamcorper leo, eget euismod orci<br>Cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus. Vestibulum <br>ultricies aliquam convallis. Maecenas ut tellus mi. Proin tincidunt, lectus eu volutpat mattis,<br> ante metus lacinia tellus, vitae condimentum nulla enim bibendum nibh. Praesent turpis risus, interdum nec venenatis id, pretium sit amet purus. Interdum et malesuada fames..</p>
+        </div>
+    </div>
+  
+    <div *ngIf="selectedTab === 'additionalInfo'" class="row">
+        <div class="col-md-12">
+            <h1 class="ms-3">Additional Information</h1>
+            <p class="ms-3" style="padding: 2rem; font-size:25px;color: rgb(152, 150, 150);">
+                Weight: 2 kg<br>
+                Dimensions: 10 × 10 × 15 cm<br>
+                Color: Beige, Black<br>
+                Material: Metal, Wood
+            </p>
+        </div>
+    </div>
+  
+    <div *ngIf="selectedTab === 'review'" class="row">
+        
+           
+        
+        <div class="col-lg-6 col-md-12">
+            <img src="https://secure.gravatar.com/avatar/e518cf671dd6e12907d6be828d0acfee?s=60&d=mm&r=g" alt="Small Image" class="img-fluid mb-2 ms-3">
+            <div class="star-rating mb-2 ms-3">
+                <span class="star"><i class="fas fa-star"></i></span>
+                <span class="star"><i class="fas fa-star"></i></span>
+                <span class="star"><i class="fas fa-star"></i></span>
+                <span class="star"><i class="fas fa-star"></i></span>
+                <span class="star"><i class="fas fa-star"></i></span>
+            </div>
+            <p class="ms-3">Nikole Burke – 08.02.2017.</p>
+            <p class="ms-3">Very Good</p>
+            <h3 class="ms-3 my-3">Add review</h3>
+            <p class="ms-3 mb-3">Your email address will not be published. Required fields are marked *</p>
+            <div class="ms-3">
+                <p class="mb-2">Your rating</p>
+                <div class="stars-rating">
+                    <span class="stars" *ngFor="let star of [1, 2, 3, 4, 5]" (click)="rate(star)" [class.gold]="star <= currentRating">
+                        <i class="fas fa-star"></i>
+                    </span>
+                </div>
+                <form>
+                    <div class="mb-3">
+                        <label for="review" class="form-label">Review</label>
+                        <textarea class="form-control" id="review" rows="3"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" value="" id="check">
+                        <label class="form-check-label" for="check">Save my name, email, and website in this browser for the next time I comment.</label>
+                    </div>
+                    <button type="submit" class="btn btn-dark">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+  </div>
+  <hr>
+  <!-- third section -->
+  <h2 class="ms-3" style="color: rgb(152, 150, 150); font-size: 20px;">related product</h2>
+  <div class="container">
+    <div class="row">
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card h-100">
+                <img src={{products.img_url}} class="card-img-top" alt="Image 2">
+                <div class="card-body">
+                    <h5 class="card-title">Product 1</h5>
+                    <p class="card-text">Description of product  goes here.</p>
+                    <div class="star-rating">
+                       
+                                <span class="star"><i class="fas fa-star"></i></span>
+                                <span class="star"><i class="fas fa-star"></i></span>
+                                <span class="star"><i class="fas fa-star"></i></span>
+                                <span class="star"><i class="fas fa-star"></i></span>
+                                <span class="star"><i class="fas fa-star"></i></span>
+                            
+                    </div>
+                    <p class="card-text">$29.99</p>
+                </div>
+            </div>
+        </div>
+       
+       
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card h-100">
+                <img src="https://depot.qodeinteractive.com/wp-content/uploads/2017/01/h4-product-27-600x728.jpg" class="card-img-top" alt="Image 2">
+                <div class="card-body">
+                    <h5 class="card-title">Product 2</h5>
+                    <p class="card-text">Description of product 2 goes here.</p>
+                    <div class="star-rating">
+                       
+                                <span class="star"><i class="fas fa-star"></i></span>
+                                <span class="star"><i class="fas fa-star"></i></span>
+                                <span class="star"><i class="fas fa-star"></i></span>
+                                <span class="star"><i class="fas fa-star"></i></span>
+                                <span class="star"><i class="fas fa-star"></i></span>
+                            
+                    </div>
+                    <p class="card-text">$29.99</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card h-100">
+                <img src="https://depot.qodeinteractive.com/wp-content/uploads/2017/01/h4-product-14-600x728.jpg" class="card-img-top" alt="Image 3">
+                <div class="card-body">
+                    <h5 class="card-title">Product 3</h5>
+                    <p class="card-text">Description of product 3 goes here.</p>
+                    <div class="star-rating">
+                        <span class="star"><i class="fas fa-star"></i></span>
+                        <span class="star"><i class="fas fa-star"></i></span>
+                        <span class="star"><i class="fas fa-star"></i></span>
+                        <span class="star"><i class="fas fa-star"></i></span>
+                        <span class="star"><i class="fas fa-star"></i></span>
+                    </div>
+                    <p class="card-text">$39.99</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card h-100">
+                <img src="https://depot.qodeinteractive.com/wp-content/uploads/2017/01/h1-product-2-600x728.jpg" class="card-img-top" alt="Image 4">
+                <div class="card-body">
+                    <h5 class="card-title">Product 4</h5>
+                    <p class="card-text">Description of product 4 goes here.</p>
+                    <div class="star-rating">
+                        <span class="star"><i class="fas fa-star"></i></span>
+                        <span class="star"><i class="fas fa-star"></i></span>
+                        <span class="star"><i class="fas fa-star"></i></span>
+                        <span class="star"><i class="fas fa-star"></i></span>
+                        <span class="star"><i class="fas fa-star"></i></span>
+                    </div>
+                    <p class="card-text">$49.99</p>
+                 
+                </div>
+            </div>
+          
+        </div>
+    </div>
+  </div>
+  
+  
+    <!-- <div *ngIf="product" class="bg-danger" style="font-size: 50px; color: white;">
+  {{product.id}}
+    </div> -->
+
+</div>
