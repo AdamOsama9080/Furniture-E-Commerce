@@ -53,10 +53,9 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
-import { ProductService } from '../../Services/product.service';
-
 import Swal from 'sweetalert2';
-
+import { ProductService } from 'src/app/Services/product.service';
+// import { ProductService } from 'src/app/Services/product.service';
 @Component({
   selector: 'app-productdetails',
   standalone: true,

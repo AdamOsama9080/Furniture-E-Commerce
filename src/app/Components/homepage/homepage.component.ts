@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { SliderComponent } from '../slider/slider.component';
 import wow from 'wowjs/dist/wow.js';
 import { CommonModule } from '@angular/common';
-// import { ProductService } from '../../Services/product.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductComponent } from '../product/product.component';
 import { NavbarComponent } from '../navbar/navbar.component';

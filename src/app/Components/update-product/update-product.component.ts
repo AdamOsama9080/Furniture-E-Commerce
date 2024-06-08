@@ -4,8 +4,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { HttpClientModule } from '@angular/common/http';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import Swal from 'sweetalert2'
-import { ProductService } from '../../Services/product.service';
-
+import { ProductService } from 'src/app/Services/product.service';
 @Component({
   selector: 'app-update-product',
   standalone: true,

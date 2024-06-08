@@ -12,7 +12,7 @@ import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,NavbarComponent,SliderComponent, RouterOutlet,RouterModule,HttpClientModule,FooterComponent,CartModule ],
+  imports: [RouterOutlet,NavbarComponent,SliderComponent,RouterOutlet,RouterModule,HttpClientModule,FooterComponent,CartModule ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   animations: [

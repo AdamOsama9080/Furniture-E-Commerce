@@ -10,8 +10,6 @@ export class ProductService {
   private api_url = 'http://localhost:2000/products';
   constructor(private http: HttpClient) { }
   
-
-
   getProducts() {
     return this.http.get(this.api_url);
   }

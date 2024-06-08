@@ -3,7 +3,7 @@ import { Component, Injectable } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { HttpClientModule } from '@angular/common/http';
-import { ProductService } from '../../Services/product.service';
+import { ProductService } from 'src/app/Services/product.service';
 // ProductService
 @Component({
   selector: 'app-create-product',
