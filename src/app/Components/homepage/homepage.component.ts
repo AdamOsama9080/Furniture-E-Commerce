@@ -12,7 +12,6 @@ import { ProductService } from 'src/app/Services/product.service';
   selector: 'app-homepage',
   standalone: true,
   imports: [SliderComponent,NavbarComponent,CommonModule,HttpClientModule,ProductComponent],
-  import { ProductService } from './../../services/product.service';
 // providers: [ProductService],
   providers:[ProductService],
   templateUrl: './homepage.component.html',
