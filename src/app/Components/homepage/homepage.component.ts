@@ -2,16 +2,19 @@ import { Component, OnInit } from '@angular/core';
 import { SliderComponent } from '../slider/slider.component';
 import wow from 'wowjs/dist/wow.js';
 import { CommonModule } from '@angular/common';
-import { ProductService } from '../../Services/product.service';
+// import { ProductService } from '../../Services/product.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductComponent } from '../product/product.component';
 import { NavbarComponent } from '../navbar/navbar.component';
+import { ProductService } from 'src/app/Services/product.service';
 
 @Component({
   selector: 'app-homepage',
   standalone: true,
   imports: [SliderComponent,NavbarComponent,CommonModule,HttpClientModule,ProductComponent],
-  providers: [ProductService],
+  import { ProductService } from './../../services/product.service';
+// providers: [ProductService],
+  providers:[ProductService],
   templateUrl: './homepage.component.html',
   styleUrl: './homepage.component.css'
 })
