@@ -11,12 +11,11 @@ import { ProductService } from 'src/app/Services/product.service';
   selector: 'app-homepage',
   standalone: true,
   imports: [SliderComponent,NavbarComponent,CommonModule,HttpClientModule,ProductComponent],
-// providers: [ProductService],
   providers:[ProductService],
   templateUrl: './homepage.component.html',
   styleUrl: './homepage.component.css'
 })
-export class HomepageComponent implements OnInit  {
+export class HomepageComponent implements OnInit {
   favoritesCount: number = 0;
   favorites: any[] = [];
 
@@ -54,6 +53,4 @@ export class HomepageComponent implements OnInit  {
       })
     }
   }
-
-
 }
