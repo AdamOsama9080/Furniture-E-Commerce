@@ -61,7 +61,7 @@
 // //     const removedItem = this.cartItems.splice(index, 1)[0];
 
 // //     // Send a request to the server to update the JSON file
-// //     this.http.delete<any>('http://localhost:2000/cart/' + removedItem.id)
+// //     this.http.delete<any>('https://json-server-furniture-project.onrender.com/cart/' + removedItem.id)
 // //       .subscribe(
 // //         (response) => {
 // //           console.log('Item removed from the cart:', response);
@@ -102,7 +102,7 @@
 //       denyButtonText: `Don't save`
 //     }).then((result) => {
 //       if (result.isConfirmed) {
-//         this.http.post<any>('http://localhost:2000/cart', product)
+//         this.http.post<any>('https://json-server-furniture-project.onrender.com/cart', product)
 //           .subscribe(
 //             (response: any) => {
 //               console.log('Item added to cart:', response);
@@ -202,7 +202,7 @@ export class ProductComponent implements OnInit {
       denyButtonText: `No`
     }).then((result) => {
       if (result.isConfirmed) {
-        this.http.post<any>('http://localhost:2000/cart', product)
+        this.http.post<any>('https://json-server-furniture-project.onrender.com/cart', product)
           .subscribe(
             (response: any) => {
               console.log('Item added to cart:', response);

@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ProductService {
 
-  private api_url = 'http://localhost:2000/products';
+  private api_url = 'https://json-server-furniture-project.onrender.com/products';
   constructor(private http: HttpClient) { }
   
   getProducts() {

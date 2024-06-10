@@ -7,7 +7,7 @@ import { BehaviorSubject, map } from 'rxjs';
 })
 export class WishlistService {
   
-  private api_url = 'http://localhost:2000/wishlist';
+  private api_url = 'https://json-server-furniture-project.onrender.com/wishlist';
 
   constructor(private http: HttpClient) { 
   }

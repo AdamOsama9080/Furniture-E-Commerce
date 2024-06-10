@@ -142,7 +142,7 @@ export class ProductdetailsComponent implements OnInit{
       denyButtonText: `No`
     }).then((result) => {
       if (result.isConfirmed) {
-        this.http.post<any>('http://localhost:2000/cart', product)
+        this.http.post<any>('https://json-server-furniture-project.onrender.com/cart', product)
           .subscribe(
             (response: any) => {
               console.log('Item added to cart:', response);

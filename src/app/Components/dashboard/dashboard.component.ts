@@ -37,7 +37,7 @@
 //   }
 //   ngOnInit(): void {
 //     const httpClient = new HttpClient(this.httpBackend);
-//     httpClient.get<any[]>('http://localhost:2000/products').subscribe(data => {
+//     httpClient.get<any[]>('https://json-server-furniture-project.onrender.com/products').subscribe(data => {
 //       this.single = data.map(product => ({ name: product.title, value: product.price }));
 //     });
 //   }
@@ -98,7 +98,7 @@ export class DashboardComponent implements OnInit {
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    this.http.get<any[]>('http://localhost:2000/simpleproducts').subscribe(data => {
+    this.http.get<any[]>('https://json-server-furniture-project.onrender.com/simpleproducts').subscribe(data => {
       this.products = data;  // Store the fetched data
       this.single = this.products.map(product => ({ name: product.title, value: product.price }));
     });

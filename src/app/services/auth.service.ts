@@ -18,10 +18,10 @@ export class AuthService {
   }
 
   register(formdata:any):Observable<any>{
-    return this.Client.post('http://localhost:2000/users',formdata)
+    return this.Client.post('https://json-server-furniture-project.onrender.com/users',formdata)
   }
 
   login():Observable<any>{
-    return this.Client.get('http://localhost:2000/users')
+    return this.Client.get('https://json-server-furniture-project.onrender.com/users')
   }
 }

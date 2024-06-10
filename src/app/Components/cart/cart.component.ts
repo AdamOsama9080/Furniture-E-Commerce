@@ -32,7 +32,7 @@ export class CartComponent implements OnInit {
     this.cartService.total$.subscribe(total => this.total = total);
   }
   fetchCartItems(): void {
-    this.http.get<CartItem[]>('http://localhost:2000/cart')
+    this.http.get<CartItem[]>('https://json-server-furniture-project.onrender.com/cart')
       .subscribe(
         (data: CartItem[]) => {
           this.cartItems = data;
@@ -61,7 +61,7 @@ export class CartComponent implements OnInit {
   }
   removeItem(index: number): void {
     const removedItem = this.cartItems.splice(index, 1)[0];
-    this.http.delete<any>('http://localhost:2000/cart/' + removedItem.id)
+    this.http.delete<any>('https://json-server-furniture-project.onrender.com/cart/' + removedItem.id)
       .subscribe(
         (response) => {
           console.log('Item removed from the cart:', response);
@@ -100,7 +100,7 @@ export class CartComponent implements OnInit {
 //     const removedItem = this.cartItems.splice(index, 1)[0];
 
 //     // Send a request to the server to update the JSON file
-//     this.http.delete<any>('http://localhost:2000/cart/' + removedItem.id)
+//     this.http.delete<any>('https://json-server-furniture-project.onrender.com/cart/' + removedItem.id)
 //       .subscribe(
 //         (response) => {
 //           console.log('Item removed from the cart:', response);
